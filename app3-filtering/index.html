@@ -1,7 +1,25 @@
-<html>
-	<body>
-		Something
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+<html ng-app="filterApp">
+<head>
+	<title>App 3 Filtering</title>
+</head>
+	<body ng-controller="filterCtrl">
+
+<!-- <div>
+	<input ng-model="hadouken" type="text" placeholder="Search for people by anything"></input>
+</div> -->
+
+<label>Sort people:
+    <select ng-model="contact" ng-options="contact.name group by contact.dateEmployed for contact in contacts">
+    </select>
+  </label><br/>
+
+		<ul ng-model="contact" ng-show="contact">
+			<li>{{ contact.name }}</li>
+			<li>{{ contact.email }}</li>
+			<li>{{ contact.dateEmployed }}</li>
+			<li>{{ contact.phone }}</li>
+		</ul>
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>
